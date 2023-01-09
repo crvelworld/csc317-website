@@ -1,0 +1,29 @@
+{{!-- Partial for header/navbar --}}
+<header class="header">
+  {{#if isLoggedIn}}
+  <h1 class="navH1">Hi, {{username}}</h1>
+  {{else}}
+  <h1 class="navH1">Welcome!</h1>
+  {{/if}}
+  <nav id="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/post">Post</a></li> 
+      {{#if isLoggedIn}}
+      <li><a id="logout">Logout</a></li>
+      {{else}}
+      <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+      {{/if}}
+      <li id="searchLi">
+        <form class="searchBar"
+      method="GET"
+      action="/posts/search"
+      enctype="application/x-www-form-urlencoded">
+        <input id="searchText" class="searchText" type="text" value="{{searchValue}}" name="searchTerm">
+        <button type="submit" class="searchBtn" id="searchBtn">Search</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,6 @@
+{{!-- Partial for comment element --}}
+<div class="aComment">
+    <p class="commentData" id="commentUser">@{{this.username}}</p>
+    <p class="commentData" id ="commentTime">{{formatDate this.createdAt}}</p>
+    <p class="commentData" id="commentText">{{this.text}}</p>
+</div>

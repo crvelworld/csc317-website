@@ -1,0 +1,46 @@
+{{!-- Handlebar for posting page --}}
+<body>
+    <main class="mainContent">
+      <form id="post-image"
+      action="/posts/create"
+      method="POST"
+      enctype="multipart/form-data" >
+        <fieldset>
+          <legend>Upload an image and caption</legend>
+          <div class="form-input">
+            <label for="userTitle">Post Title</label>
+            <input type="text" 
+            name="title" 
+            id="userTitle" 
+            required/>
+          </div>
+          <div class="form-input">
+            <label for="userDescription">Post Description</label>
+            <input 
+            type="text" 
+            name="description" 
+            id="userDescription"
+            required/>
+          </div>
+          <div class="form-input">
+            <label for="userImage">Upload an image</label>
+            <input
+              type="file"
+              name="userImage"
+              id="userImage"
+              accept="image/*"
+            required/>
+          </div>
+          <div>
+            <label for="usePolicy">
+              <input type="checkbox" name="usePolicy" class="checkbox" id="usePolicy" required/>
+              <a href="#">Accept the Use Policy</a>
+              </label>
+          </div>
+        </fieldset>
+        <div class="form-input">
+          <input type="submit" class="btn" value="Post" />
+        </div>
+      </form>
+    </main>
+  </body>

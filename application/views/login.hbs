@@ -1,0 +1,29 @@
+{{!-- Handlebar for login page --}}
+<body>
+  <main class="mainContent">
+    <form id="login"
+    action="/users/login"
+    method="POST"
+    enctype="application/x-www-form-urlencoded"
+    >
+      <fieldset>
+        <legend>Log into an existing account</legend>
+        <div class="form-input">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div class="form-input">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="form-info">
+          <p>Don't have an account?</p>
+          <a href="/register">Register</a>
+        </div>
+      </fieldset>
+      <div class="form-input">
+        <input type="submit" class="btn" value="Login" />
+      </div>
+    </form>
+  </main>
+</body>

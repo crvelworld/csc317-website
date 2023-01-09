@@ -1,0 +1,12 @@
+{{!-- Handlebar for home page/displaying posts --}}
+<main class="mainContent" id="indexContent">
+  {{#each results}}
+      <div class="aPost">
+          <p class="postData" id="title">{{this.title}}</p>
+          <a href="/posts/{{this.id}}" id="thumbnailAnchor">
+            <img src="/{{this.thumbnail}}" alt="" id="image">
+          </a>
+          <p class="postData" id="description">{{this.description}}</p>
+        </div>
+  {{/each}}
+</main>

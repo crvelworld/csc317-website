@@ -1,0 +1,29 @@
+   {{!-- Handlebar for single post page --}}
+   <main class="mainContent">
+    {{log currentPost.comments}}
+        <div class="aPost" id="viewImage">
+            <p class="postData" id="title">{{currentPost.title}}</p>
+            <img src="/{{currentPost.image}}" alt="" id="currentImage">
+            <a class="postData" id="author">{{currentPost.username}}</a>
+            <p class="postData" id="time">{{formatDate currentPost.createdAt}}</p>
+            <p class="postData" id="description">{{currentPost.description}}</p>
+        </div>
+        <div class="commentSection" id="commentSection">
+            {{#if isLoggedIn}}
+            <div class="form-input" id="commentForm">
+                <textarea id="addComment"></textarea>
+                <button class="btn" type="submit" id="commentBTN" data-postid="{{currentPost.id}}">Comment</button>
+            </div>
+            {{else}}
+            <a href="/login">
+                <h1>Login to comment!</h1>
+            </a>
+            {{/if}}
+
+            
+            <div class="comments" id="comments">
+                {{#each currentPost.comments}}
+                    {{> comment this}}
+                {{/each}}
+            </div>
+    </main>

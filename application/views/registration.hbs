@@ -1,0 +1,42 @@
+{{!-- Handlebar for registration page --}}
+<body>
+  <main class="mainContent">
+    <form id="register" action="/users/register" 
+    method="POST" 
+    enctype="application/x-www-form-urlencoded">
+      <fieldset>
+        <legend>Register a new account</legend>
+        <div class="form-input">
+          <label for="username"> Username</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <div class="form-input">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email"  required/>
+        </div>
+        <div class="form-input">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <div class="form-input">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" name="confirmPassword" id="confirmpassword"/>
+        </div>
+        <div>
+          <input type="checkbox" name="age" class="checkbox" id="age"  required/>
+          <label for="age">Confirm that you are 13+ years or older</label>
+        </div>
+        <input type="checkbox" name="TOS" class="checkbox" id="TOS"  required/>
+        <label for="TOS">Accept the</label>
+        <a href="">Terms of Service and Privacy Rules</a>
+      </fieldset>
+      <div class="form-input">
+        <input type="submit" class="btn" value="Register" />
+      </div>
+    </form>
+    <aside class="errorWindow" id="errorWindow">
+      <ul class="errorText" id="errorText">
+      </ul>
+    </aside>
+  </main>
+</body>
